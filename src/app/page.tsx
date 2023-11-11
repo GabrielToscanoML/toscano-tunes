@@ -1,10 +1,11 @@
-import { Header } from "@/components/Header"
+import { Login } from "@/components/Login"
 
 export default function Home() {
   return (
-    <main>
-      <Header />
-      <h1>Hello World!</h1>
+    <main className="h-screen bg-[#666BF6]">
+      <div className="h-screen flex justify-center items-center">
+        <Login />
+      </div>
     </main>
   )
 }
