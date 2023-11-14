@@ -1,7 +1,9 @@
+import { Header } from "@/components/Header";
+
 export default function Profile() {
   return (
     <main>
-      <h1>Profile</h1>
+      <Header />
     </main>
   )
 }

@@ -1,3 +1,5 @@
+'use client';
+
 import { getUser } from "@/app/utils/localStorage";
 import { useEffect, useState } from "react";
 import { NavBar } from "./NavBar";

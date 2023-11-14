@@ -1,7 +1,9 @@
+import { Header } from "@/components/Header";
+
 export default function Favorites() {
   return (
     <main>
-      <h1>Favorites</h1>
+      <Header />
     </main>
   )
 }
