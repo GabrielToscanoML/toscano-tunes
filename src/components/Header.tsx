@@ -12,8 +12,8 @@ export function Header() {
 
   return(
     <main>
-      <header className="flex text-2xl h-16 bg-[#666BF6] text-white items-center justify-center">
-        <h1>Bem vinda(o), {userName}</h1>
+      <header className="flex text-2xl h-16 bg-[#190482] text-white items-center justify-center">
+        <h1>Welcome, {userName}!</h1>
       </header>
       <NavBar />
     </main>

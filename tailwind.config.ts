@@ -11,6 +11,7 @@ const config: Config = {
       spacing: {
         '750': '750px',
         '450': '450px',
+        '60': '60%',
       },
       colors: {
         'p-blue': '#666BF6',

@@ -36,7 +36,7 @@ export function Login() {
                         onClick={() => saveUser(inputValue)}
                         disabled={isDisabled}
                     >
-                        Entrar
+                        Log in
                     </button>
                 </Link>
             </form>
