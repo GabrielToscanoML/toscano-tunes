@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Album } from "@/types/types.js";
 import searchAlbumsAPI from "@/app/utils/searchAlbumsAPI";
 import { AlbumCard } from "./AlbumCard";
+import Link from "next/link";
 
 export function SearchInput() {
     const [artistName, setArtistName] = useState('');
@@ -56,16 +57,16 @@ export function SearchInput() {
                                 key={album.collectionId}
                                 className="mx-8 mb-8"
                             >
-                                <AlbumCard
-                                artistId={album.artistId}
-                                artistName={album.artistName}
-                                artworkUrl100={album.artworkUrl100}
-                                collectionId={album.collectionId}
-                                collectionName={album.collectionName}
-                                collectionPrice={album.collectionPrice}
-                                releaseDate={album.releaseDate}
-                                trackCount={album.trackCount}
-                                />
+                                <Link href={`album/${album.collectionId}`}>
+                                    <AlbumCard
+                                        artistName={album.artistName}
+                                        artworkUrl100={album.artworkUrl100}
+                                        collectionId={album.collectionId}
+                                        collectionName={album.collectionName}
+                                        collectionPrice={album.collectionPrice}
+                                        trackCount={album.trackCount}
+                                    />
+                                </Link>
                             </div>
                         )
                     })
