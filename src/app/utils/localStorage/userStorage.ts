@@ -3,9 +3,9 @@ import { User } from "@/types/types";
 export const saveUser = (name: string):void => {
     const user: User = {
         name,
-        favoriteSongs: [],
     };
     localStorage.setItem('userData', JSON.stringify(user));
+    localStorage.setItem('favorite_songs', JSON.stringify({ songs: [] }));
 }
 
 export const getUser = () => {

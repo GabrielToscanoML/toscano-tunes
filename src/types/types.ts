@@ -9,10 +9,14 @@ export type Album = {
 
 export type User = {
     name: string;
-    // favoriteSongs?: Array<Album>,
+}
+
+export type FavoriteSongs = {
+    songs: Array<Song>;
 }
 
 export type Song = {
     trackName: string,
     previewUrl: string,
+    trackId: string,
 }

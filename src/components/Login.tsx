@@ -5,7 +5,7 @@ import logo from '../assets/logo.svg';
 import Link from "next/link";
 
 import { useEffect, useState } from 'react';
-import { saveUser } from "@/app/utils/localStorage";
+import { saveUser } from "@/app/utils/localStorage/userStorage";
 
 export function Login() {
     const [inputValue, setInputValue] = useState('');
@@ -18,8 +18,8 @@ export function Login() {
         inputValue.length > 2 ? setIsDisabled(false): setIsDisabled(true);
     }, [inputValue])
 
-    return (
-        <main className="h-450 w-750 rounded-xl flex flex-col justify-evenly items-center bg-[#ffffff]">
+    return (    
+        <main className="h-450 min-w-[250px] rounded-xl flex flex-col justify-evenly items-center bg-[#ffffff]">
             <Image src={logo} alt="logo do trybe-tunes" />
             <form className="flex justify-evenly items-center flex-col rounded-xl w-96 h-1/2">
                 <input

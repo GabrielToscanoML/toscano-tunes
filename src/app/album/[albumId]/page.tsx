@@ -52,6 +52,7 @@ export default function Page({ params }: { params: { albumId: string } }) {
                                         <SongCard
                                             trackName={song.trackName}
                                             previewUrl={song.previewUrl}
+                                            trackId={song.trackId}
                                         />
                                     </div>
                                 );

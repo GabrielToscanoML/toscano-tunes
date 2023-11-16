@@ -8,6 +8,7 @@ import Link from "next/link";
 export function SearchInput() {
     const [artistName, setArtistName] = useState('');
     const [isDisabled, setIsDisabled] = useState(true);
+    const [searched, setSearched] = useState(false);
     const [albumsData, setAlbumsData] = useState<Album[]>([]);
   
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,7 +18,7 @@ export function SearchInput() {
     async function getAlbumsData(name: string) {
       setAlbumsData( await searchAlbumsAPI(artistName));
       setArtistName('');
-      // setSearched(true);
+      setSearched(true);
     }
   
     useEffect(() => {
@@ -48,8 +49,8 @@ export function SearchInput() {
             }
             <section className="flex justify-center items-center flex-wrap max-w-[60%]">
                 {
-                    albumsData.length < 1 ?
-                    <h3>Cannot find the artists!</h3>
+                    albumsData.length < 1 && searched ?
+                    <h3 className="text-red-600 text-xl">Unable to find the artists!</h3>
                     :
                     albumsData.map((album) => {
                         return(
