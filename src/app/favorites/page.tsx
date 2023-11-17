@@ -12,26 +12,31 @@ export default function Favorites() {
   useEffect(() => {
     const {songs} = getFavoriteSongs();
     setFavorites(songs);
-    console.log('favorites ', favorites);
   }, [])
 
   return (
     <main>
       <Header />
-      <div>
-        {
-          favorites.map((song: Song) => {
-            return(
-              <div key={song.trackId}>
-                <SongCard
-                    trackName={song.trackName}
-                    previewUrl={song.previewUrl}
-                    trackId={song.trackId}
-                />
-              </div>
-            )
-          })
-        }
+      <div className="flex flex-col justify-center items-center mt-8 max-w-[750px] ml-auto mr-auto">
+        <h2 className="mb-8 text-4xl">Favorited songs</h2>
+        <div className="flex flex-wrap justify-center">
+          {
+            favorites.map((song: Song) => {
+              return(
+                <div
+                  key={song.trackId}
+                  className="p-4"
+                  >
+                  <SongCard
+                      trackName={song.trackName}
+                      previewUrl={song.previewUrl}
+                      trackId={song.trackId}
+                  />
+                </div>
+              )
+            })
+          }
+        </div>
       </div>
     </main>
   )
