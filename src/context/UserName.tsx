@@ -14,9 +14,7 @@ const UserNameProvider = ({ children }: {children: React.ReactNode}) => {
 
     const login = (user: string) => {
         setUserName(user);
-        console.log(user);
     }
-
 
     return (
         <>

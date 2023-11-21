@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { UserNameProvider } from '@/context/UserName'
+import { SongsProvider } from '@/context/FavoriteSongs'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <UserNameProvider>{children}</UserNameProvider>
+        <UserNameProvider>
+          <SongsProvider>
+            {children}
+          </SongsProvider>
+        </UserNameProvider>
       </body>
     </html>
   )

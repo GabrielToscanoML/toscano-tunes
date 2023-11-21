@@ -1,25 +1,28 @@
-import { addSong, removeSong } from "@/app/utils/localStorage/favoriteSongs";
 import { Song } from "@/types/types";
-import { useState } from "react";
+import { useContext } from "react";
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 import './checkbox.css';
+import { SongsContext } from "@/context/FavoriteSongs";
 
 export function SongCard(props: Song) {
-  const [favorited, setFavorited] = useState(false);
+
+  const { addSongToFavorites, removeFavoriteSong, songs } = useContext(SongsContext);
+
+  const checkFavorite = (song: Song) => {
+    const result = songs?.some((currSong: Song) => song.trackId == currSong.trackId);
+    return result;
+  }
 
   const onChangeCheckBox = (e: { target: { checked: boolean | ((prevState: boolean) => boolean); value: string }; }) => {
     const {checked, value} = e.target;
-    if (checked) {
-      addSong(JSON.parse(value));
-      setFavorited(true);
-    } else {
-      removeSong(JSON.parse(value));
-      setFavorited(false);
-    }
-  };
+    const result = {...JSON.parse(value)}
+    result.checked = checked;
+    checked ? addSongToFavorites(result) : removeFavoriteSong(result);
+  }
 
     return(
       <main className="flex flex-col justify-center">
@@ -38,7 +41,7 @@ export function SongCard(props: Song) {
               type="checkbox"
               id={ props.trackId }
               value={ JSON.stringify(props) } // usando JSON pra transformar em objeto
-              checked={ favorited }
+              checked={ checkFavorite(props) }
               onChange={onChangeCheckBox}
             />
             <FontAwesomeIcon

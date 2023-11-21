@@ -15,4 +15,5 @@ export type Song = {
     trackName: string,
     previewUrl: string,
     trackId: string,
+    checked?: true | false,
 }
