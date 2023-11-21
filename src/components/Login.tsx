@@ -5,9 +5,12 @@ import logo from '../assets/logo.svg';
 import Link from "next/link";
 
 import { useEffect, useState } from 'react';
-import { saveUser } from "@/app/utils/localStorage/userStorage";
+
+import { useContext } from "react";
+import { UserNameContext } from "@/context/UserName";
 
 export function Login() {
+    const { login } = useContext(UserNameContext);
     const [inputValue, setInputValue] = useState('');
     const [isDisabled, setIsDisabled] = useState(true);
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,7 +36,7 @@ export function Login() {
                     <button
                         type="button"
                         className="disabled:cursor-not-allowed disabled:opacity-80 w-64 h-12 text-lg rounded-xl bg-[#666BF6] text-white"
-                        onClick={() => saveUser(inputValue)}
+                        onClick={() => login(inputValue)}
                         disabled={isDisabled}
                     >
                         Log in

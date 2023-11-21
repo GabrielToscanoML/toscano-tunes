@@ -7,10 +7,6 @@ export type Album = {
     trackCount: number,
 };
 
-export type User = {
-    name: string;
-}
-
 export type FavoriteSongs = {
     songs: Array<Song>;
 }

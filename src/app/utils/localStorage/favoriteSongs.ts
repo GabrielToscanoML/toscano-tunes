@@ -8,7 +8,6 @@ export const getFavoriteSongs = () => {
 }
 
 const saveFavoriteSongs = (songs: Song[]): void => {
-  console.log('savefav ', songs);
   const favoriteSongs: FavoriteSongs = {
     songs,
   }
@@ -25,4 +24,4 @@ export const addSong = (song: Song) => {
 export const removeSong = (song: Song) => {
   const {songs} = getFavoriteSongs();
   saveFavoriteSongs(songs.filter((s: Song) => s.trackId !== song.trackId));
-}
+} 
