@@ -15,8 +15,14 @@ export function SearchInput() {
       setArtistName(event.target.value);
     }
   
-    async function getAlbumsData(name: string) {
-      setAlbumsData( await searchAlbumsAPI(artistName));
+    const handleKeyPress = (event: React.KeyboardEvent) => {
+        if (event.key === 'Enter') {
+           getAlbumsData();
+        }
+    };
+
+    async function getAlbumsData() {
+      setAlbumsData(await searchAlbumsAPI(artistName));
       setArtistName('');
       setSearched(true);
     }
@@ -31,14 +37,15 @@ export function SearchInput() {
                 <input
                     value={artistName}
                     onChange={handleChange}
-                    className="border-2 border-[#666BF6] h-12 w-96 rounded-xl p-4"
+                    className="border-2 border-[#666BF6] h-12 max-w-96 rounded-xl p-4"
                     type="search"
-                    placeholder="Type the artist name"  
+                    placeholder="Type the artist name"
+                    onKeyDown={(e) => handleKeyPress(e)}
                 />
                 <button
                     type="button"
                     disabled={isDisabled}
-                    onClick={() => getAlbumsData(artistName)}
+                    onClick={() => getAlbumsData()}
                     className="w-32 h-12 text-lg rounded-xl bg-[#666BF6] text-white disabled:cursor-not-allowed disabled:opacity-80"
                     >
                     Search

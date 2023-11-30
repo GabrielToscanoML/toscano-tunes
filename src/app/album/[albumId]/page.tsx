@@ -32,10 +32,10 @@ export default function Page({ params }: { params: { albumId: string } }) {
     return (
         <main>
             <Header />
-            <div className="flex justify-evenly mt-16 max-w-[60%] ml-auto mr-auto">
+            <div className="flex justify-evenly mt-16 max-w-[60%] ml-auto mr-auto flex-wrap gap-12">
                 {
                     requestSongs.length > 0 &&
-                        <section className="mr-4">
+                        <section>
                             <AlbumCard
                                 artistName={requestSongs[0].artistName}
                                 artworkUrl100={requestSongs[0].artworkUrl100}
@@ -46,7 +46,7 @@ export default function Page({ params }: { params: { albumId: string } }) {
                             />
                         </section>
                 }
-                <section className="ml-4">
+                <section>
                     {
                         requestSongs.length > 0 ?
                         requestSongs?.map((song, index) => {
