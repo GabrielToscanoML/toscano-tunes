@@ -25,12 +25,12 @@ export function SongCard(props: Song) {
   }
 
     return(
-      <main className="flex flex-col justify-center">
+      <main className="flex flex-col justify-center items-center">
         <h1 className="mb-2 font-medium">{props.trackName}</h1>
-        <div className="flex items-center">
+        <div className="flex items-center w-64 px-2 sm:w-96">
           <audio className="" src={props.previewUrl} controls>
               <track kind="captions" />
-              O seu navegador não suporta o elemento{props.trackName} <code>audio</code>.
+              O seu navegador não suporta o elemento {props.trackName} <code>audio</code>.
           </audio>
           <label
             htmlFor={ props.trackId }

@@ -32,7 +32,7 @@ export default function Page({ params }: { params: { albumId: string } }) {
     return (
         <main>
             <Header />
-            <div className="flex justify-evenly mt-16 max-w-[60%] ml-auto mr-auto flex-wrap gap-12">
+            <div className="flex flex-col items-center justify-center mx-auto sm:w-[640px] mt-16 gap-12 md:w-[768px] md:flex-row md:items-start">
                 {
                     requestSongs.length > 0 &&
                         <section>
