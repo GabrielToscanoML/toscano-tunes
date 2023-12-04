@@ -23,7 +23,7 @@ export function Login() {
     }, [inputValue])
 
     return (    
-        <main className="h-450 min-w-[250px] rounded-xl flex flex-col justify-evenly items-center bg-[#ffffff]">
+        <main className="h-96 w-80 min-w-[250px] rounded-xl flex flex-col justify-evenly items-center bg-[#ffffff]">
             <Image src={logo} alt="logo do trybe-tunes" />
             <form className="flex justify-evenly items-center flex-col rounded-xl w-96 h-1/2">
                 <input

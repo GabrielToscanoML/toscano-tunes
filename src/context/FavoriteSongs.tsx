@@ -4,7 +4,7 @@ import { Song } from "@/types/types";
 import { createContext, useState } from "react";
 
 type SongsContextProps = {
-    songs: Song[] | null;
+    songs: Song[] | [];
     addSongToFavorites: (song: Song) => void;
     removeFavoriteSong: (song: Song) => void;
 }

@@ -52,7 +52,7 @@ export function SearchInput() {
                 </button>
             </section>
             {
-                albumsData.length > 0 && <h1 className="mb-12 text-4xl font-bold">{albumsData[0].artistName}</h1>
+                albumsData.length > 0 && <h1 className="mb-12 text-4xl font-bold text-center">{albumsData[0].artistName}</h1>
             }
             <section className="flex justify-center items-center flex-wrap max-w-[60%]">
                 {

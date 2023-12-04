@@ -18,11 +18,10 @@ export default function Favorites() {
     <main>
       <Header />
       <div className="flex flex-col justify-center items-center mt-8 max-w-[750px] ml-auto mr-auto">
-        <h2 className="mb-8 text-4xl">Favorited songs</h2>
         <div className="flex flex-wrap justify-center">
           {
-            songs  ?
-              songs?.map((song: Song) => {
+            songs.length > 0 ?
+              songs.map((song: Song) => {
                 return(
                   <div
                     key={song.trackId}
@@ -37,8 +36,7 @@ export default function Favorites() {
                   </div>
                 )
               })
-              :
-              <h1>No favorite songs added!</h1>
+              : <h1 className="text-black text-center font-bold">No favorite songs added!</h1>
           }
         </div>
       </div>
