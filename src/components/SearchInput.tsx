@@ -4,6 +4,9 @@ import { Album } from "@/types/types.js";
 import searchAlbumsAPI from "@/app/utils/searchAlbumsAPI";
 import { AlbumCard } from "./AlbumCard";
 import Link from "next/link";
+import Image from "next/image";
+
+import searchIcon from '../assets/search-icon.svg';
 
 export function SearchInput() {
     const [artistName, setArtistName] = useState('');
@@ -33,11 +36,11 @@ export function SearchInput() {
   
     return (
         <main className="flex flex-col justify-center items-center">
-            <section className="flex justify-center items-center gap-x-4 h-32">
+            <section className="flex justify-center items-center h-12 border-2 border-[#666BF6] rounded-xl my-4">
                 <input
                     value={artistName}
                     onChange={handleChange}
-                    className="border-2 border-[#666BF6] h-12 max-w-96 rounded-xl p-4"
+                    className="h-8 outline-none p-4 w-48 sm:w-72"
                     type="search"
                     placeholder="Type the artist name"
                     onKeyDown={(e) => handleKeyPress(e)}
@@ -46,9 +49,9 @@ export function SearchInput() {
                     type="button"
                     disabled={isDisabled}
                     onClick={() => getAlbumsData()}
-                    className="w-32 h-12 text-lg rounded-xl bg-[#666BF6] text-white disabled:cursor-not-allowed disabled:opacity-80"
+                    className="w-12 items-center flex justify-center h-12 text-lg rounded-xl disabled:cursor-not-allowed disabled:opacity-80"
                     >
-                    Search
+                    <Image src={searchIcon} alt="search icon"/>
                 </button>
             </section>
             {

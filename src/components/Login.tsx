@@ -24,11 +24,11 @@ export function Login() {
 
     return (    
         <main className="h-96 w-80 min-w-[250px] rounded-xl flex flex-col justify-evenly items-center bg-[#ffffff]">
-            <Image src={logo} alt="logo do trybe-tunes" />
-            <form className="flex justify-evenly items-center flex-col rounded-xl w-96 h-1/2">
+            <Image className="pt-8" src={logo} alt="logo do trybe-tunes" />
+            <form className="flex justify-evenly items-center flex-col rounded-xl w-full h-96">
                 <input
                     type="text"
-                    className="border-2 border-[#666BF6] h-12 rounded-xl p-4 w-64"
+                    className="border-2 border-[#666BF6] h-12 rounded-xl p-4 w-56"
                     placeholder="Digite seu nome"
                     value={inputValue}
                     onChange={handleChange}
@@ -36,7 +36,7 @@ export function Login() {
                 <Link href="/search">
                     <button
                         type="button"
-                        className="disabled:cursor-not-allowed disabled:opacity-80 w-64 h-12 text-lg rounded-xl bg-[#666BF6] text-white"
+                        className="disabled:cursor-not-allowed disabled:opacity-80 w-56 h-12 text-lg rounded-xl bg-[#666BF6] text-white"
                         onClick={() => login(inputValue)}
                         disabled={isDisabled}
                     >

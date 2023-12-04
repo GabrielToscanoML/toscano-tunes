@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* 
-body {
-    background-color: #adaecf;
+* {
+   margin: 0;
+   padding: 0;
 } */
