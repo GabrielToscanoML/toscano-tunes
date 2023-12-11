@@ -29,7 +29,7 @@ export function Login() {
                 <input
                     type="text"
                     className="border-2 border-[#666BF6] h-12 rounded-xl p-4 w-56"
-                    placeholder="Digite seu nome"
+                    placeholder="Type your name"
                     value={inputValue}
                     onChange={handleChange}
                 />
